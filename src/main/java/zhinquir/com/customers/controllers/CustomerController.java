@@ -7,6 +7,7 @@ import zhinquir.com.customers.services.CustomerService;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api")
 @CrossOrigin(origins = "*")
 public class CustomerController {
 
