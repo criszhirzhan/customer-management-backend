@@ -1,2 +1,9 @@
-package zhinquir.com.customers.dto;public class RequestLogin {
+package zhinquir.com.customers.dto;
+
+import lombok.Data;
+
+@Data
+public class RequestLogin {
+    private String email;
+    private String password;
 }
