@@ -32,13 +32,13 @@ public class JwtUtil {
                 + (1000L * 60 * 60 * 24 * 14)); // 14 days from current day
     }
 
-    public String getUserIdByToken(String token){
+    public static String getUserIdByToken(String token){
         JWTVerifier verifier = JWT.require(algorithm)
                 .withIssuer("Zhinquir")
                 .build();
 
         DecodedJWT decodedJWT = verifier.verify(token); // verifica que el token no haya sido manipulado o haya expirado
-        String userId = decodedJWT.getClaim("userId").asString();// se usa la misma que se uso para generar el tokeb
+        String userId = decodedJWT.getClaim("userId").toString();// se usa la misma que se uso para generar el tokeb
         return userId;
     }
 }

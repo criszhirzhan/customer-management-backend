@@ -3,6 +3,7 @@ package zhinquir.com.customers.controllers;
 import org.springframework.web.bind.annotation.*;
 import zhinquir.com.customers.entities.User;
 import zhinquir.com.customers.services.UserService;
+import zhinquir.com.customers.utils.JwtUtil;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class UserController {
 
-    private UserService service;
+    private final UserService service;
 
     private  UserController(UserService service){
         this.service = service;
@@ -26,7 +27,6 @@ public class UserController {
 
     @GetMapping("/getAllusers")
     public List<User> getAllUser (){
-
         return service.getAllUser();
     }
 
